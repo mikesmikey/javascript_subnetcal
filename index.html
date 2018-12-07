@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IPv6 calculator</title>
+
+    <style>
+        td {
+            border : 1px solid white;
+            background-color : lightgray;   
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="background-color :yellow">IPv6 Subnet Calculator</h1>
+    <h2>by Kraiwich Kornsri 59160543</h2>
+    <p>กรุณาระบุ IP Address</p>
+    <input id="inputip" type="text" placeholder="ipv6 address">
+    <p>กรุณาระบุ prefix</p>
+    <select id="prefix-dropdown"></select>
+    <button onclick="checkillegal()">calculate</button>
+</body>
+<footer>
+    <script src="bignumber.js"></script>
+    <script src="logic.js"></script>
+</footer>
+
+</html>
