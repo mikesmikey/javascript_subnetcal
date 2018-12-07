@@ -33,7 +33,7 @@ function checkillegal() {
         return;
     }
 
-    if (inputip.length > 0) {
+    if (inputip.length > 2) {
 
         //find all dot 
         const dotpattern = /[:]/g;
@@ -407,13 +407,15 @@ function createInfoTable(originalip, ipblock, prefixlength) {
 
 function createSubnetArea(ipblock, prefixlength) {
 
+    let contentarea = document.getElementById('content');
+
     if (document.getElementById('subnetarea')) {
-        document.body.removeChild(document.getElementById('subnetarea'));
+        contentarea.removeChild(document.getElementById('subnetarea'));
     }
 
     let subnetarea = document.createElement('div');
     subnetarea.setAttribute('id', 'subnetarea');
-    document.body.appendChild(subnetarea);
+    contentarea.appendChild(subnetarea);
 
     for (i = 1; i < 64 && Number.parseInt(prefixlength) + i <= 128; i++) {
 
@@ -442,13 +444,15 @@ function createSubnetArea(ipblock, prefixlength) {
 
 function createSubnetAreaControl(ipblock, originalsubnet, newsubnet) {
 
+    let contentarea = document.getElementById('content');
+
     if (document.getElementById('subnetarea')) {
-        document.body.removeChild(document.getElementById('subnetarea'));
+        contentarea.removeChild(document.getElementById('subnetarea'));
     }
 
     let subnetarea = document.createElement('div');
     subnetarea.setAttribute('id', 'subnetarea');
-    document.body.appendChild(subnetarea);
+    contentarea.appendChild(subnetarea);
 
     subnetarea.appendChild(document.createElement('h1').appendChild(document.createTextNode(`Orignal network`)));
     subnetarea.appendChild(document.createElement('br'));
